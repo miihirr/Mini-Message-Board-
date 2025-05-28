@@ -3,6 +3,12 @@
         messenger
     </title>
     <body>
-        <p>HI this is index <%= id%></p>
+        <% for (let index = 0; index < messages.length; index++) { %>
+            <ul>
+                <li>User: <%= messages[index].user %></li>
+                <li>Text: <%= messages[index].text %></li>
+                <li>Date: <%= messages[index].added %></li>
+            </ul>
+        <% } %> 
     </body>
 </html>
