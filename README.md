@@ -19,18 +19,26 @@ A simple message board web application built with Node.js, Express, and EJS. Use
 
 1. Clone the repo
 
-   git clone https://github.com/YOUR_USERNAME/mini-message-board.git
-   cd mini-message-board
+   ```bash
+    git clone https://github.com/YOUR_USERNAME/mini-message-board.git
+   ```
+   ```bash
+   cd mini-message-board-
+   ```
 
-2. Install dependencies
+3. Install dependencies
 
+```bash
    npm install
+```
 
-3. Start the server
+4. Start the server
 
+```bash
    node app.js
+```
 
-4. Open in browser
+5. Open in browser
 
    Visit: http://localhost:3000
 
