@@ -1,14 +1,14 @@
 <html>
-    <title>
-        messenger
-    </title>
-    <body>
-        <% for (let index = 0; index < messages.length; index++) { %>
-            <ul>
-                <li>User: <%= messages[index].user %></li>
-                <li>Text: <%= messages[index].text %></li>
-                <li>Date: <%= messages[index].added %></li>
-            </ul>
-        <% } %> 
-    </body>
+  <head>
+    <title>messenger</title>
+  </head>
+  <body>
+    <% for (let index = 0; index < messages.length; index++) { %>
+      <ul>
+        <li>User: <%= messages[index].username %></li>
+        <li>Text: <%= messages[index].content %></li>
+        <li>Date: <%= new Date(messages[index].created_at).toLocaleString() %></li>
+      </ul>
+    <% } %>
+  </body>
 </html>

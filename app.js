@@ -2,35 +2,25 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const path = require("node:path");
+const db = require("./db/query")
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
-let messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
 
-app.get("/", (req, res) => {
+
+app.get("/", async(req, res) => {
+  const messages=await db.getMessages()
   res.render("index", { messages });
 });
 
 app.get("/new", (req, res) => {
   res.render("form");
 });
-app.post("/new", (req, res) => {
-  let data=req.body
-  messages.push({ text: data.text,
-    user: data.user,
-    added: new Date(),})
+
+app.post("/new",async (req, res) => {
+  let {user,text}=req.body
+  await db.addMessage(user,text)
     res.redirect("/")
 });
 
