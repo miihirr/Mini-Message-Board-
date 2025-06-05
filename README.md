@@ -13,6 +13,7 @@ A simple message board web application built with Node.js, Express, and EJS. Use
 - Node.js
 - Express.js
 - EJS
+- Postgresql
 
 
 ## 🖥️ Installation & Usage
